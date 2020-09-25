@@ -117,10 +117,10 @@ class App {
         document.addEventListener( 'click', onMouseClick, false );
         document.addEventListener( 'mousemove', onMouseMove, false );
 
-        document.getElementById('dnsbtn').addEventListener('click', onFilterClick, false);
-        document.getElementById('tcpbtn').addEventListener('click', onFilterClick, false);
-        document.getElementById('udpbtn').addEventListener('click', onFilterClick, false);
-        document.getElementById('cmppbtn').addEventListener('click', onFilterClick, false);
+        document.getElementById('DNS').addEventListener('click', onFilterClick, false);
+        document.getElementById('TCP').addEventListener('click', onFilterClick, false);
+        document.getElementById('UDP').addEventListener('click', onFilterClick, false);
+        document.getElementById('CMPP').addEventListener('click', onFilterClick, false);
 
       
         //document.addEventListener( 'mousedown', onDocumentMouseDown, false );
@@ -341,31 +341,11 @@ function onFilterClick( event ){
     
 
     // if these filter buttons are clicked, we want to toggle the visibility of links
-    if (btnName == "dnsbtn"){
-        scene.traverse(function(child){
-            if(child.name == "DNS"){
-                child.visible = !child.visible;
-            }
-        });
-    } else if(btnName == "tcpbtn") {
-        scene.traverse(function(child){
-            if(child.name == "TCP"){
-                child.visible = !child.visible;
-            }
-        });
-    } else if(btnName == "udpbtn") {
-        scene.traverse(function(child){
-            if(child.name == "UDP"){
-                child.visible = !child.visible;
-            }
-        });
-    } else {
-        scene.traverse(function(child){
-            if(child.name == "CMPP"){
-                child.visible = !child.visible;
-            }
-        });
-    }
+    scene.traverse(function(child){
+        if(child.name == btnName){
+            child.visible = !child.visible;
+        }
+    });
 }
 
 function onWindowResize() {

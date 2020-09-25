@@ -23,10 +23,10 @@
 
     <button id="submit" onclick="setup()" style="position: absolute; left: 220px; margin-top: 20px;">Upload data</button>
     <div id="filters" class="filters">
-        <button id="dnsbtn" style="margin-left: 25%">DNS</button>
-        <button id="tcpbtn">TCP</button>
-        <button id="udpbtn">UDP</button>
-        <button id="cmppbtn">CMPP</button>
+        <button id="DNS" style="margin-left: 25%">DNS</button>
+        <button id="TCP">TCP</button>
+        <button id="UDP">UDP</button>
+        <button id="CMPP">CMPP</button>
     </div>
     <input class="fileform" id="fileform" type='file' hidden/>
     <div id="legend" class="legend">
@@ -58,10 +58,10 @@
 					var reader = new FileReader();
             		reader.onload = res => {
                         data = JSON.parse(res.target.result); // array of JSON objects
-                        document.getElementById('dnsbtn').style.setProperty('visibility', 'visible');
-                        document.getElementById('tcpbtn').style.setProperty('visibility', 'visible');
-                        document.getElementById('udpbtn').style.setProperty('visibility', 'visible');
-                        document.getElementById('cmppbtn').style.setProperty('visibility', 'visible');
+                        document.getElementById('DNS').style.setProperty('visibility', 'visible');
+                        document.getElementById('TCP').style.setProperty('visibility', 'visible');
+                        document.getElementById('UDP').style.setProperty('visibility', 'visible');
+                        document.getElementById('CMPP').style.setProperty('visibility', 'visible');
 					    /*for(var e in data){
 							console.log(data[e]);
                         }*/
