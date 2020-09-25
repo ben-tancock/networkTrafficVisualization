@@ -299,7 +299,7 @@ function drawBar(ip, barType){
         'backgroundColor': 'transparent', 
         'legend':{'textStyle': {'color': 'white'}}, 
         'titleTextStyle': {'color': 'white'},
-        'isStacked':'percent',
+        'isStacked':'absolute',
         'bars': 'horizontal',
         'series': {
             0:{axis: 'DNS', 'color':'00FF80', 'textStyle': {'color': 'white'}},
@@ -307,7 +307,7 @@ function drawBar(ip, barType){
             2:{axis: 'UDP', 'color':'#FFFF66', 'textStyle': {'color': 'white'}},
             3:{axis: 'CMPP', 'color':'#FF0000', 'textStyle': {'color': 'white'}}
         },
-        'hAxis' : { textStyle: {color: 'white'}},
+        'hAxis' : { textStyle: {color: 'white'}, ticks: [10,20,30,40,50,60], minSpacing: 40},
         'vAxis' : { textStyle: {color: 'white'}},
         
     };
