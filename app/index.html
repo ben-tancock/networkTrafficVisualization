@@ -1,0 +1,84 @@
+<html lang="en">
+	<head>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+		<title>My three.js app</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="../build/bundle.js"></script>
+		<style>
+			body {
+				margin: 0px;
+			}
+			canvas {
+				display: block;
+			}
+		</style>
+	</head>
+<body>
+    <div id="piechart" class="piechart"></div>
+    <div id="barchart1" class="barchart1"></div>
+    <div id="barchart2" class="barchart2"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <button id="submit" onclick="setup()" style="position: absolute; left: 220px; margin-top: 20px;">Upload data</button>
+    <div id="filters" class="filters">
+        <button id="dnsbtn" style="margin-left: 25%">DNS</button>
+        <button id="tcpbtn">TCP</button>
+        <button id="udpbtn">UDP</button>
+        <button id="cmppbtn">CMPP</button>
+    </div>
+    <input class="fileform" id="fileform" type='file' hidden/>
+    <div id="legend" class="legend">
+        <h2>Links:</h2>
+        <img src="./images/dns.png" style="top: 60px;"> <span style=" position: absolute; top:80px;">= DNS</span>
+        <img src="./images/tcp.png" style="top: 110px; "> <span style=" position: absolute; top:130px; ">= TCP</span>
+        <img src="./images/udp.png" style="top: 160px; "> <span style=" position: absolute; top:180px; ">= UDP</span>
+        <img src="./images/cmpp.png" style="top: 210px;"> <span style=" position: absolute; top:230px; ">= CMPP</span>
+
+        <h2 style="top: 280px;">Nodes:</h2>
+        <img src="./images/public.png" style="top: 330px; "> <span style=" position: absolute; top:350px; ">= Private IP (Network)</span>
+        <img src="./images/cmpp.png" style="top: 380px; "> <span style=" position: absolute; top:400px; ">= Public IP</span>
+
+    </div>
+	<script>
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+		
+        const app = new MYAPP.App();
+        
+		document.getElementById('submit').addEventListener('click', openDialog);
+		function setup() {
+                
+				
+                document.getElementById('fileform').addEventListener('change', submitForm);
+                function submitForm() {
+					console.log("test");
+					var reader = new FileReader();
+            		reader.onload = res => {
+                        data = JSON.parse(res.target.result); // array of JSON objects
+                        document.getElementById('dnsbtn').style.setProperty('visibility', 'visible');
+                        document.getElementById('tcpbtn').style.setProperty('visibility', 'visible');
+                        document.getElementById('udpbtn').style.setProperty('visibility', 'visible');
+                        document.getElementById('cmppbtn').style.setProperty('visibility', 'visible');
+					    /*for(var e in data){
+							console.log(data[e]);
+                        }*/
+                        document.getElementById("legend").style.visibility = "visible";
+						app.init(data, width, height);
+					}
+
+					reader.readAsText(document.getElementById('fileform').files[0]); 
+                    
+                }
+		}
+		
+		function openDialog() {
+        	document.getElementById('fileform').click();
+        }
+		
+		
+	</script>
+</body>
+</html>

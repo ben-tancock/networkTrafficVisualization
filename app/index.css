@@ -1,0 +1,75 @@
+.legend {
+    visibility: hidden;
+    position: absolute;   
+    width: 300px;
+    height: 500px;
+}
+
+.legend > img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    left: 10%;
+}
+
+.legend > span {
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    left: 30%;
+}
+
+.legend > h2 {
+    position: absolute;   
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    left: 15%;
+}
+
+.filters {
+    position: absolute;
+    width: 50%;
+    height: 6%;
+    margin-left: 25%;
+    visibility: hidden;
+   
+}
+
+.filters > button {
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: solid 2px lightgray;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: limegreen;
+    margin-left: 10%;
+    margin-top: 20px;
+    
+}
+
+.piechart {
+    position: absolute;
+    left: 80%;
+    top: 10%;
+}
+
+.barchart1 {
+    position: absolute;
+    width: 250;
+    height: 125;
+    left: 81.5%;
+    top: 30%;
+
+}
+
+.barchart2 {
+    position: absolute;
+    width: 250;
+    height: 125;
+    left: 81.5%;
+    top: 45%;
+
+}
