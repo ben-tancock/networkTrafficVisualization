@@ -1,9 +1,12 @@
 ===== DESCRIPTION ===== 
 
-A visualization of network traffic in the format of a JSON file, filled with packet objects.
+A sample .json filled with some basic packet traffic information over a network was given. 
+The objective was to create a visualization of this information using the ThreeJS library.
 It features an array of buttons at the top to toggle a filter for each protocol,
 as well as interactible nodes that, when clicked, will display graphs describing the packet
 traffic being sent and recieved to/from that specific IP address, and total traffic by number of requests per protocol.
+
+ 
 
 
 ===== INSTRUCTIONS =====
