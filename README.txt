@@ -14,3 +14,9 @@ npm run build
 open the index.html file
 click the 'upload data' button
 select the sample_pcap.json file, or any other JSON file with the same format (as long as there aren't too many packets)
+
+==== FEEEDBACK =====
+
+"We did particularly like the effort taken to separate public/private IP addresses in the code provided. 
+The biggest area of improvement I would advise is commenting (e.g. its not clear the rationale behind where inline comments appear), 
+and adding some form of data validation."
